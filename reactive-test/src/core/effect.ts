@@ -31,7 +31,12 @@ function getDependencyMap(target: object) {
 }
 
 export function reactiveEffect(effect: Function) {
-    activeEffect = effect;
-    effect();
-    activeEffect = null;
+    const wrappedEffect = () => {
+        activeEffect = effect;
+        effect();
+        activeEffect = null;
+    };
+
+    wrappedEffect(); // Run the effect immediately
+    return wrappedEffect;
 }

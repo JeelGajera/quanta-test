@@ -4,7 +4,7 @@ export const Test = () => {
   // Create a reactive state
   const state = reactive({
     count: 0,
-    nested: { value: 5 },
+    nested: { value: 5, obj: {data: 1} },
   });
 
   // Create a computed property
@@ -23,14 +23,14 @@ export const Test = () => {
   );
 
   state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 10; // Logs: "Nested value changed to: 10"
-  state.nested.value = 11; // Logs: "Nested value changed to: 10"
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 10;
+  state.nested.value = 11; // Logs: "Nested value changed to: 11"
   state.count++;
   console.log(doubleCount.value); // 4
   state.count++;
